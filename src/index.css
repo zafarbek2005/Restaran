@@ -1,0 +1,27 @@
+@import url('https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100..900;1,100..900&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+
+    a{
+        text-decoration: none;
+    }
+    font-family: "Raleway", serif;
+}
+
+body{
+    background: url(./assets/bg.png) !important;
+    height: 100vh !important;
+    background-position: center !important;
+    background-repeat: no-repeat !important;
+    background-size: cover;
+}
+
+.conteiner{
+    max-width: 1300px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
