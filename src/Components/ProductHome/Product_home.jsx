@@ -1,44 +1,55 @@
-import React from 'react'
-import './Product.scss'
-import P from '../ProductHome/p.png'
+import React from 'react';
+import './Product.scss';
+import P from '../ProductHome/p.png';
 import { FaRegHeart } from "react-icons/fa";
-const Product_home = () => {
-  return (
-   <>
-    <h3>Популярные блюда</h3>
-   <div className="products_home conteiner">
-        <div className="produt_home">
-            <img src= {P} alt="" />
-            <div className="title">
-                <div>
-                <h3>Chicken soup</h3>
-                <p>Spicy with garlic</p>
-                </div>
-                <div className="heart">
-                    <button>
-                      <FaRegHeart />
-                    </button>
-                </div>
-            </div>
-            <div className="price">
-                    <h3>$10.00</h3>
-                    <button>
-                        
-                    </button>
-            </div>
-        </div>
-   </div>
-   
-   
-   
-   
-   
-   
-   
-   
-   
-   </>
-  )
-}
+import { IoCartOutline } from "react-icons/io5";
 
-export default Product_home
+// Reusable ProductCard Component
+const ProductCard = ({ title, description, price, imgSrc }) => {
+  return (
+    <div className="product-card">
+      <img className="product-img" src={imgSrc} alt={title} />
+      <div className="product-info">
+        <div className="product-title">
+          <h3>{title}</h3>
+          <p>{description}</p>
+        </div>
+        <div className="product-heart">
+          <button>
+            <FaRegHeart />
+          </button>
+        </div>
+      </div>
+      <div className="product-price">
+        <h3>{price}</h3>
+        <button>
+          <IoCartOutline />
+        </button>
+      </div>
+    </div>
+  );
+};
+
+const Product_home = () => {
+  const products = [
+    { title: 'Chicken soup', description: 'Spicy with garlic', price: '$10.00', imgSrc: P },
+    { title: 'Chicken soup', description: 'Spicy with garlic', price: '$10.00', imgSrc: P },
+    { title: 'Chicken soup', description: 'Spicy with garlic', price: '$10.00', imgSrc: P },
+    { title: 'Chicken soup', description: 'Spicy with garlic', price: '$10.00', imgSrc: P },
+    { title: 'Chicken soup', description: 'Spicy with garlic', price: '$10.00', imgSrc: P },
+    { title: 'Chicken soup', description: 'Spicy with garlic', price: '$10.00', imgSrc: P },
+  ];
+
+  return (
+    <>
+      <h3 className="section-title">Популярные блюда</h3>
+      <div className="products-container conteiner">
+        {products.map((product, index) => (
+          <ProductCard key={index} {...product} />
+        ))}
+      </div>
+    </>
+  );
+};
+
+export default Product_home;

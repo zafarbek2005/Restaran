@@ -1,5 +1,154 @@
-
-
-.products_home{
+.products-container {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr); // Default: 4 items per row
+    gap: 20px; // Add some spacing between the items
+    justify-items: center;
     
-}
+    // Media query for 480px and below (mobile screens)
+    @media (max-width: 768px) {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 30px;
+      justify-items: center;
+      
+    }
+    @media (max-width: 480px) {
+      grid-template-columns: repeat(2, 1fr);
+      gap: 30px;
+      justify-items: center;
+
+    }
+  }
+  
+  .product-card {
+    width: 263px;
+    height: 310px;
+    border-radius: 38px;
+    background: rgba(255, 255, 255, 0.4); // Simplified gradient effect
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    position: relative;
+    @media (max-width: 768px) {
+      width: 240px;
+
+    }
+    @media (max-width: 480px) {
+      width: 180px;
+      height: 260px;
+    }
+  }
+  
+  .product-img {
+    margin-top: -50px; // Adjusted for better centering
+    border-radius: 50%;
+    width: 214px;
+    height: 200px;
+    object-fit: cover;
+    margin-left: auto;
+    margin-right: auto;
+    @media (max-width: 768px) {
+      width: 200px;
+      position: relative;
+      top: -20px;
+    }
+    @media (max-width: 480px) {
+      width: 140px;
+      object-fit: contain;
+    }
+  }
+  
+  .product-info {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  .product-title {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    text-align: center;
+  
+    h3 {
+      font-family: 'Gilroy-Bold';
+      font-weight: 600;
+      font-size: 24px;
+      color: #000;
+    }
+  
+    p {
+      font-family: 'Gilroy-Regular';
+      font-size: 15px;
+      color: #555;
+    }
+    @media (max-width: 768px) {
+      h3{
+        font-size: 22px;
+      }
+    }
+    @media (max-width: 480px) {
+      h3{
+        font-size: 18px;
+      }
+    }
+  }
+  
+  .product-heart {
+    position: relative;
+    top: -10px;
+    button {
+      background: none;
+      border: none;
+      color: #000;
+      svg {
+        font-size: 22px;
+      }
+    }
+    // @media (max-width: 768px) {
+      
+    // }
+    @media (max-width: 480px) {
+      button {
+        background: none;
+        border: none;
+        color: #000;
+        svg {
+          font-size: 16px;
+        }
+      }
+    }
+  }
+  
+  .product-price {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 20px;
+  
+    h3 {
+      font-family: 'Gilroy-Bold';
+      font-weight: 600;
+      font-size: 20px;
+    }
+  
+    button {
+      background-color: #000;
+      color: aliceblue;
+      border: none;
+      padding: 5px 10px;
+      border-radius: 5px;
+      svg {
+        font-size: 22px;
+      }
+    }
+  }
+  
+  .section-title {
+    text-align: center;
+    margin-bottom: 20px;
+    font-size: 28px;
+    font-family: 'Gilroy-Bold';
+  }
+  
