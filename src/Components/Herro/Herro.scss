@@ -86,8 +86,7 @@
 
 .herro_img {
     img {
-        max-width: 100%;
-        height: auto;
+       
         @media (max-width: 768px) {
             max-width: 80%;
             margin-top: 10px;
